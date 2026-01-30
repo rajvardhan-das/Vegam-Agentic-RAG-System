@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Agentic RAG Chatbot 🚀
 
 RAG | MCP | Milvus | Self-Hosted LLM | Streamlit | Multi Agent | Error Handling | FastAPI | Gemini
@@ -175,7 +176,10 @@ Verify:
 
 docker ps
 
-4️⃣ Start Backend (FastAPI)
+4️⃣ Start Backend (LLM & FastAPI)
+ollama serve
+ollama list
+
 python -m uvicorn backend.app:app --reload
 
 
@@ -251,3 +255,7 @@ Data Scientist
 
 
 
+=======
+# Vegam-Agentic-RAG-System
+Built an Agentic RAG System that uses AI agents to intelligently retrieve and  answer questions from documents.
+>>>>>>> 1cb833824e68fa1b10e36e325ceca173ecbad8a1

@@ -3,7 +3,7 @@ import pandas as pd
 from pypdf import PdfReader
 from docx import Document
 from pptx import Presentation
-
+from openpyxl import load_workbook
 
 def load_pdf(path: Path) -> str:
     reader = PdfReader(path)
@@ -30,9 +30,30 @@ def load_pptx(path: Path) -> str:
     return "\n".join(slides_text)
 
 
+
+
+
 def load_excel(path: Path) -> str:
-    df = pd.read_excel(path)
-    return df.to_string(index=False)
+    wb = load_workbook(path, data_only=True)
+    output = []
+
+    for sheet_name in wb.sheetnames:
+        ws = wb[sheet_name]
+        output.append(f"Sheet: {sheet_name}")
+
+        headers = None
+        for row in ws.iter_rows(values_only=True):
+            if headers is None:
+                headers = row
+                continue
+            row_text = " ; ".join(
+                f"{headers[i]}: {row[i]}" for i in range(len(headers))
+            )
+            output.append(row_text)
+
+
+    return "\n".join(output)
+
 
 
 def load_txt(path: Path) -> str:
