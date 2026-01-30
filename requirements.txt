@@ -1,0 +1,34 @@
+
+---
+
+# ✅ `requirements.txt`
+
+```txt
+# Core Backend
+fastapi
+uvicorn
+pydantic
+requests
+
+# Frontend
+streamlit
+
+# Vector Database
+pymilvus
+
+# Embeddings & ML
+sentence-transformers
+numpy
+
+# Document Processing
+pypdf
+python-docx
+python-pptx
+pandas
+openpyxl
+
+# LLM APIs
+google-generativeai
+
+# Utilities
+tqdm
