@@ -168,6 +168,9 @@ pip install -r requirements.txt
 
 3️⃣ Start Milvus (Docker)
 cd C:\milvus
+
+Invoke-WebRequest https://raw.githubusercontent.com/milvus-io/milvus/refs/heads/master/scripts/standalone_embed.bat -OutFile standalone.bat
+
 standalone.bat start
 
 
